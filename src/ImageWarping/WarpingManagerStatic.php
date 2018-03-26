@@ -38,9 +38,9 @@ class WarpingManagerStatic
      *
      * @return ImageWarping\Warping
      */
-    public static function loadBmp($data)
+    public static function loadBmp($path)
     {
-        return self::getManager()->loadBmp($data);
+        return self::getManager()->loadBmp($path);
     }
 
     public static function loadGD($data)
@@ -48,14 +48,14 @@ class WarpingManagerStatic
         return self::getManager()->loadGD($data);
     }
 
-    public static function loadJpeg($data)
+    public static function loadJpeg($path)
     {
-        return self::getManager()->loadJpeg($data);
+        return self::getManager()->loadJpeg($path);
     }
 
-    public static function loadPng($data)
+    public static function loadPng($path)
     {
-        return self::getManager()->loadPng($data);
+        return self::getManager()->loadPng($path);
     }
 
     public static function loadString($data)
