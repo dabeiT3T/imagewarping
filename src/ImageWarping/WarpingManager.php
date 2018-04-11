@@ -52,6 +52,24 @@ class WarpingManager
         return $this;
     }
 
+    public function make($data)
+    {
+        switch (true) {
+            // instanceof gd
+            case $this->isGDResource($data):
+                return $this->loadFromGDResource($data);
+            // is a path
+            case $this->isFile($data):
+                return $this->loadFromFile($data);
+            case $this->isBase64($data):
+                return $this->loadFromBase64($data);
+            case $this->isString($data):
+                return $this->loadFromString($data);
+            default:
+                throw new Exception\NotReadableException("Image source not readable");
+        }
+    }
+
     protected function hypotsq($x, $y)
     {
         return $x*$x + $y*$y;

@@ -32,39 +32,14 @@ class WarpingManagerStatic
     }
 
     /**
-     * Statically initiates an Warping instance from following types
+     * Statically initiates an Warping instance
      *
      * @param  mixed $data
      *
      * @return ImageWarping\Warping
      */
-    public static function loadBmp($path)
+    public static function make($data)
     {
-        return self::getManager()->loadBmp($path);
-    }
-
-    public static function loadGD($data)
-    {
-        return self::getManager()->loadGD($data);
-    }
-
-    public static function loadJpeg($path)
-    {
-        return self::getManager()->loadJpeg($path);
-    }
-
-    public static function loadPng($path)
-    {
-        return self::getManager()->loadPng($path);
-    }
-
-    public static function loadString($data)
-    {
-        return self::getManager()->loadString($data);
-    }
-
-    public static function loadBase64($data)
-    {
-        return self::getManager()->loadBase64($data);
+        return self::getManager()->make;
     }
 }
